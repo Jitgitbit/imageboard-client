@@ -2,12 +2,15 @@ import React, { Component } from 'react'
 import store from './store'
 import { Provider } from 'react-redux'
 import './App.css';
+import ListContainer from './components/ListContainer';
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div className="App">hello world</div>
+        <div className="App">
+          <ListContainer/>
+        </div>
       </Provider>
     );
   }

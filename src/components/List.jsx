@@ -1,4 +1,5 @@
 import React from 'react'
+import CreateFormContainer from './CreateFormContainer'
 
 export default function List (props) {
   
@@ -11,7 +12,10 @@ export default function List (props) {
       </div>)
     return (
       <div>
-        {images}
+        <CreateFormContainer/>
+          <div>
+            {images}
+          </div>
       </div>
     )
 }

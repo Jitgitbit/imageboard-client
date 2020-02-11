@@ -57,6 +57,22 @@ export const login = (email, password) => dispatch => {
     password
   }
   request
+    .post(`${baseUrl}/user`)
+    .send(user)
+    .then(response =>{
+      const action = dispatchLogin(response.body)
+      dispatch (action)
+    })
+    .catch(console.error)
+}
+
+export const signIn = (email, password) => dispatch => {
+  console.log('user data test for login')
+  const user = {
+    email,
+    password
+  }
+  request
     .post(`${baseUrl}/login`)
     .send(user)
     .then(response =>{

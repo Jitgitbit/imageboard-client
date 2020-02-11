@@ -1,6 +1,7 @@
 import React from 'react'
 import CreateFormContainer from './CreateFormContainer'
 import LoginFormContainer from './LoginFormContainer'
+// import SignInFormContainer from './SignInFormContainer';
 
 export default function List (props) {
   
@@ -18,8 +19,13 @@ export default function List (props) {
       ? <CreateFormContainer/>
       : <LoginFormContainer/>
 
+    // const signForm = props.user
+    //   ? <CreateFormContainer/>
+    //   : <SignInFormContainer/>
+
     return (
       <div>
+        {/* <SignInFormContainer/> */}
         {form}
           <div>
             {images}

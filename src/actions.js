@@ -2,7 +2,7 @@ import request from 'superagent'
 
 export const ALL_IMAGES = 'ALL_IMAGES'
 
-const baseUrl = `https://immense-shore-73420.herokuapp.com`  //'http://localhost:4000'
+const baseUrl =  'http://localhost:4000' //`https://immense-shore-73420.herokuapp.com`
 
 function allImages (payload) {
   return {

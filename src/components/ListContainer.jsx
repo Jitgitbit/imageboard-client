@@ -10,7 +10,7 @@ class ListContainer extends React.Component {
     
   }
   render() {
-    return <List user={this.props.user} images={this.props.images} />
+    return <List user={this.props.user} images={this.props.images}/>
   }
 }
 

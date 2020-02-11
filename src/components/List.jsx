@@ -2,6 +2,8 @@ import React from 'react'
 import CreateFormContainer from './CreateFormContainer'
 import LoginFormContainer from './LoginFormContainer'
 // import SignInFormContainer from './SignInFormContainer';
+// import './List.css';
+
 
 export default function List (props) {
   
@@ -9,7 +11,7 @@ export default function List (props) {
     .images
     .map(image =>
       <div key={image.id}>
-        <h3>{image.title}</h3>
+        <h3 className="Img">{image.title}</h3>
         <img src={image.url} alt=""/> 
       </div>)
 

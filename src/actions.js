@@ -44,19 +44,23 @@ export const createImage = data => dispatch => {
 
 export const JWT = 'JWT'
 
-function user(payload) {
+function dispatchLogin(user) {
   return {
     type: JWT,
-    payload
+    payload: user
   }
 }
-export const login = data => dispatch => {
-  console.log('user data test', data)
+export const login = (email, password) => dispatch => {
+  console.log('user data test')
+  const user = {
+    email,
+    password
+  }
   request
     .post(`${baseUrl}/login`)
-    .send(data)
+    .send(user)
     .then(response =>{
-      const action = user(response.body)
+      const action = dispatchLogin(response.body)
       dispatch (action)
     })
     .catch(console.error)

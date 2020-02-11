@@ -7,14 +7,18 @@ import List from './List'
 class ListContainer extends React.Component {
   componentDidMount() {
     this.props.getImages()
+    
   }
   render() {
-    return <List images={this.props.images} />
+    return <List user={this.props.user} images={this.props.images} />
   }
 }
 
 function mapStateToProps (state) {
-  return { images: state.images }
+  return {
+    images: state.images,
+    user: state.user
+  }
 }
 
 

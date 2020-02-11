@@ -11,10 +11,16 @@ export default function List (props) {
         <h3>{image.title}</h3>
         <img src={image.url} alt=""/> 
       </div>)
+
+      console.log("USAR?", props.user);
+
+    const form = props.user
+      ? <CreateFormContainer/>
+      : <LoginFormContainer/>
+
     return (
       <div>
-        <LoginFormContainer/>
-        <CreateFormContainer/>
+        {form}
           <div>
             {images}
           </div>

@@ -12,7 +12,7 @@ export default function List (props) {
         <img src={image.url} alt=""/> 
       </div>)
 
-      console.log("USAR?", props.user);
+      console.log("USAR?", props.user);  // check mapStateToProps in ListContainer for user!!!!
 
     const form = props.user
       ? <CreateFormContainer/>

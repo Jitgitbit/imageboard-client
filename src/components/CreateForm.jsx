@@ -10,6 +10,7 @@ export default (props) => (
             name="title" 
             value={props.title} 
             onChange={props.onChange}></input>
+            
         <label>it's URL</label>
         <input 
             placeholder="url" 

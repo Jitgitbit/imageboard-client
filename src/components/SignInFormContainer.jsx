@@ -7,7 +7,7 @@ class SignInFormContainer extends React.Component {
   state = { email: '', password: '' }
   onSubmit = (event) => {
     event.preventDefault()
-    this.props.signIn(this.state.email, this.state.password)
+    this.props.signIn(this.state.email, this.state.password)  //THE SIGN UP WORKS!!
   }
   onChange = (event) => {
     this.setState({

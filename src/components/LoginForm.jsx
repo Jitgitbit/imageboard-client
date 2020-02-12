@@ -3,7 +3,7 @@ import React from 'react'
 export default (props) => (
     <form onSubmit={props.onSubmit}>
 
-        <label>Login/Sign in email</label>
+        <label>Login email</label>
         <input 
             placeholder="email" 
             type="text"

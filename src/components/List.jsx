@@ -1,7 +1,7 @@
 import React from 'react'
 import CreateFormContainer from './CreateFormContainer'
 import LoginFormContainer from './LoginFormContainer'
-// import SignInFormContainer from './SignInFormContainer';
+import SignInFormContainer from './SignInFormContainer';
 // import './List.css';
 
 
@@ -16,19 +16,23 @@ export default function List (props) {
       </div>)
 
       console.log("USAR?", props.user);  // check mapStateToProps in ListContainer for user!!!!
-
-    const form = props.user
+      console.log("USAR login?", props.user.jwt);  // check mapStateToProps in ListContainer for user!!!!
+      console.log("USAR new user?", props.user.userCreated);  // check mapStateToProps in ListContainer for user!!!!
+     
+      
+    const loginForm = props.user.jwt
       ? <CreateFormContainer/>
       : <LoginFormContainer/>
 
-    // const signForm = props.user
-    //   ? <CreateFormContainer/>
-    //   : <SignInFormContainer/>
+    const checkLoginForm = props.user.userCreated === false && props.user.jwt === undefined
+      ? <SignInFormContainer/>
+      : null
 
     return (
       <div>
         {/* <SignInFormContainer/> */}
-        {form}
+        {loginForm}
+        {checkLoginForm}
           <div>
             {images}
           </div>

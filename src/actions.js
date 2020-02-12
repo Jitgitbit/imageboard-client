@@ -51,22 +51,6 @@ function dispatchLogin(user) {
   }
 }
 export const login = (email, password) => dispatch => {
-  console.log('user data test')
-  const user = {
-    email,
-    password
-  }
-  request
-    .post(`${baseUrl}/user`)
-    .send(user)
-    .then(response =>{
-      const action = dispatchLogin(response.body)
-      dispatch (action)
-    })
-    .catch(console.error)
-}
-
-export const signIn = (email, password) => dispatch => {
   console.log('user data test for login')
   const user = {
     email,
@@ -77,6 +61,26 @@ export const signIn = (email, password) => dispatch => {
     .send(user)
     .then(response =>{
       const action = dispatchLogin(response.body)
+      dispatch (action)
+    })
+    .catch(console.error)
+}
+
+function signUpSucces() {
+  return {type: USER_CREATED };
+}
+
+export const signIn = (email, password) => dispatch => {
+  console.log('user data test for sign in')
+  const user = {
+    email,
+    password
+  }
+  request
+    .post(`${baseUrl}/user`)
+    .send(user)
+    .then(response =>{
+      const action = signUpSucces(response.body)
       dispatch (action)
     })
     .catch(console.error)

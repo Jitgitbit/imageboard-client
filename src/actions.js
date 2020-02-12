@@ -66,6 +66,8 @@ export const login = (email, password) => dispatch => {
     .catch(console.error)
 }
 
+export const USER_CREATED = `USER_CREATED`;
+
 function signUpSucces() {
   return {type: USER_CREATED };
 }
